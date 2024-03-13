@@ -1,0 +1,30 @@
+.homeContainer {
+    text-align: left;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgb(0, 122, 47), #f0f0f0);
+}
+
+.homeContainer h1 {
+    color: #ffffff;
+}
+
+.homeContainer a {
+    display: inline-block;
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.homeContainer a:hover {
+    background-color: #ddd;
+}
+
+.buttonContainer {
+    text-align: left;
+    width: 100%; /* Ensures it stretches across the width of its parent */
+}
