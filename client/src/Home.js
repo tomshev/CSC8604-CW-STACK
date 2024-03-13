@@ -10,9 +10,9 @@ function Home() {
             <div className="buttonContainer">
             <Link to="/app">TEST FETCHING FROM SERVER</Link>
             <br />
-            <Link to="/cashierview">CashierView PANEL</Link>
+            <Link to="/cashierview">CashierView (Submit customer's order)</Link>
             <br />
-            <Link to="/publicview">PublicView PANEL</Link>
+            <Link to="/publicview">PublicView (Split screen)</Link>
         </div>
       </div>
     );
