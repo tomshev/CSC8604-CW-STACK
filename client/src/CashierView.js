@@ -3,12 +3,16 @@ import './CashierView.css';
 
 function CashierView() {
 
+    const [selectedMeal, setSelectedMeal] = useState(null);
+
+    const handleMealSelect = (meal) => {
+        setSelectedMeal(meal);
+    };
+
     const handleSubmit = () => {
 
-        // Handle the submit action here
         console.log("Order submitted!");
-        // Potentially, you could add more logic here to actually do something
-        // with the order, like sending it to a server
+        // LOGIC FOR SENDING ORDER TO SERVER HERE
       };
 
     return (
@@ -16,11 +20,23 @@ function CashierView() {
         <div className="cashierContainer">
             <h1>CashierView (Submit customer's order)</h1>
             <div className="mealButtonsContainer">
-                <button className="mealButton">Meal 1</button>
-                <button className="mealButton">Meal 2</button>
-                <button className="mealButton">Meal 3</button>
+            {['Meal 1', 'Meal 2', 'Meal 3'].map((meal, index) => (
+                    <button
+                        key={index}
+                        className={`mealButton ${selectedMeal === meal ? 'selected' : ''}`}
+                        onClick={() => handleMealSelect(meal)}
+                    >
+                        {meal}
+                    </button>
+                ))}
             </div>
-            <button className="submitButton" onClick={handleSubmit} >SUBMIT</button>
+            <button
+                className="submitButton"
+                onClick={handleSubmit}
+                disabled={!selectedMeal} // Disable if no meal is selected
+            >
+                SUBMIT
+            </button>
         </div>
     );
 }

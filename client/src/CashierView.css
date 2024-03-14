@@ -40,3 +40,8 @@
     color: white;
     font-size: 16px;
 }
+
+.selected {
+    background-color: #0056b3; /* Darker shade for selected button */
+    border-color: #004085; /* Optionally, make the border darker as well */
+}
