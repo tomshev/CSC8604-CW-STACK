@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react' 
+import './CashierView.css';
 
 function CashierView() {
 
@@ -12,14 +13,14 @@ function CashierView() {
 
     return (
 
-        <div>
+        <div className="cashierContainer">
             <h1>CashierView (Submit customer's order)</h1>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <button style={{ marginRight: '10px' }}>Meal 1</button>
-                <button style={{ marginRight: '10px' }}>Meal 2</button>
-                <button>Meal 3</button>
+            <div className="mealButtonsContainer">
+                <button className="mealButton">Meal 1</button>
+                <button className="mealButton">Meal 2</button>
+                <button className="mealButton">Meal 3</button>
             </div>
-            <button style={{ marginTop: '10px' }} onClick={handleSubmit} >SUBMIT</button>
+            <button className="submitButton" onClick={handleSubmit} >SUBMIT</button>
         </div>
     );
 }
