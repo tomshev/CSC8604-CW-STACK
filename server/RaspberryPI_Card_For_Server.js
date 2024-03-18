@@ -31,6 +31,7 @@ function startReadingCard() {
         let response = mfrc522.findCard();
         if (!response.status) {
             console.log("NO CARD");
+            lastReadData = null;
             return;
         }
         console.log("DETECTED CARD OF TYPE: " + response.bitSize);
