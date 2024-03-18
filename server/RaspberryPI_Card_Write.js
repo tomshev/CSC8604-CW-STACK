@@ -59,18 +59,32 @@ setInterval(function() {
     // Authenticate on Block 8 with key and uid
     // Output message if there is an error
     if (!mfrc522.authenticate(8, key, uid)) {
-        console.log("Authentication Error");
+        console.log("AUTHENTICATION ERROR");
         return;
     }
 
-    // Retrieve data on Block 8 and output it
-    console.log("Block: 8 Data: " + mfrc522.getDataForBlock(8));
+    // Data to be written onto the card
+    let data = [0xCA, 0x00, 0x00, 0x00, 
+                0x00, 0x00, 0x00, 0x00, 
+                0x00, 0x00, 0x00, 0x00, 
+                0x00, 0x00, 0x00, 0x00];
 
-    // Outputting the first byte (number) only
-    // This is for testing and future purposes
-    let blockdata = mfrc522.getDataForBlock(8);
-    let firstbyte = blockdata[0];
-    console.log(firstbyte);
+    // Write number as first byte (TESTING)
+    // let numberTemp = 555;
+    // let data2 = new Array(16).fill(0);
+    // data2[0] = numberTemp;
+    
+    // Output existing data before writing new data
+    console.log("BLOCK 8 LOOKED LIKE THIS: ");
+    console.log(mfrc522.getDataForBlock(8));
+
+    // Writing data to Block 8 
+    console.log("WRITING DATA TO BLOCK 8...");
+    mfrc522.writeDataToBlock(8, data);
+
+    // Output updated Block 8
+    console.log("UPDATED BLOCK 8: ");
+    console.log(mfrc522.getDataForBlock(8));
 
     // Finish the process
     mfrc522.stopCrypto();
