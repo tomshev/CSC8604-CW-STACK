@@ -1,15 +1,15 @@
 import React from 'react';
-
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick'; // Import the Slider component
-
 import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import './PublicView.css';
 
 const PublicView = () => {
     return (
         <div style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
+            <div className='public-view-title'>
+                <h2 id="pv-title">TODAY'S CHOICES AND NUTRITION FACTS</h2>
+            </div>
             <div style={{flex: 1, overflow: 'hidden'}}>
                 <Carousel
                     autoPlay
@@ -21,13 +21,15 @@ const PublicView = () => {
                     showArrows={true}
                 >
                     <div>
-                        <img src="meal1.jpg" alt="Image 1"/>
+                        <img src="MealVar_1.jpg" alt="Image 1"/>
                     </div>
                     <div>
-                        <img src="meal2.jpg" alt="Image 2"/>
+                        <img src="MealVar_2.jpg" alt="Image 2"/>
                     </div>
-                    {/* Add more images as needed */}
                 </Carousel>
+            </div>
+            <div className='public-view-title'>
+                <h2 id="pv-title">LIVE FEED</h2>
             </div>
             <div style={{flex: 1}}>
                 {/* Placeholder for diagram */}

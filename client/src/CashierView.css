@@ -20,12 +20,27 @@
     font-size: 32px; 
     cursor: pointer;
     outline: none;
-    border: 2px solid #73b7ff; /* Example border color */
-    background-color: #73b7ff; /* Example background color */
-    color: white;
+    border: 1px solid #000000;
+    background-color: #ffffff; 
+    color: rgba(255, 255, 255, 0);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.Meal1 {
+    background-image: url('../public/Button1_Pizza.png');
+    background-size: cover;
+}
+
+.Meal2 {
+    background-image: url('../public/Button2_Chicken.png');
+    background-size: cover;
+}
+
+.Meal3 {
+    background-image: url('../public/Button3_Pasta.png');
+    background-size: cover;
 }
 
 .submitButton {
@@ -43,5 +58,6 @@
 
 .selected {
     background-color: #0056b3; /* Darker shade for selected button */
-    border-color: #004085; /* Optionally, make the border darker as well */
+    border: 5px solid #ff0000;
+    border-color: #ff0000; /* Optionally, make the border darker as well */
 }

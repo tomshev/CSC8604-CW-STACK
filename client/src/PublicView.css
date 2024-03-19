@@ -1,0 +1,15 @@
+.public-view-title {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: Helvetica;
+    font-weight: bold;
+    /* background: linear-gradient(to right, green, lightgreen); */
+    background: linear-gradient(to right, rgb(0, 122, 47), #f0f0f0);
+    height: 7vh;
+}
+
+#pv-title {
+    margin-left: 20px;
+    color: white;
+}
