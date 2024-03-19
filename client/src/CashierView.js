@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 import './CashierView.css';
+import TimeDisplay from './TimeDisplay';
 
 function CashierView() {
 
@@ -17,9 +18,13 @@ function CashierView() {
       };
 
     return (
-
         <div className="cashierContainer">
-            <h1>CashierView (Submit customer's order)</h1>
+            <div className="cashiew-view-info">
+            <h1>SUBMIT CUSTOMER'S ORDER</h1>
+            <TimeDisplay />
+            <h2>Card: </h2>
+            <h2>Student: </h2>
+            </div>
             <div className="mealButtonsContainer">
             {['Meal1', 'Meal2', 'Meal3'].map((meal, index) => (
                     <button
@@ -31,13 +36,15 @@ function CashierView() {
                     </button>
                 ))}
             </div>
-            <button
-                className="submitButton"
-                onClick={handleSubmit}
-                disabled={!selectedMeal} // Disable if no meal is selected
-            >
-                SUBMIT
-            </button>
+            <div className='submitButtonMain'> 
+                <button
+                    className="submitButton"
+                    onClick={handleSubmit}
+                    disabled={!selectedMeal} // Disable if no meal is selected
+                >
+                    SUBMIT
+                </button>
+            </div>
         </div>
     );
 }
