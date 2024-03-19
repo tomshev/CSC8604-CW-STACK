@@ -15,8 +15,7 @@ function TimeDisplay() {
 
   return (
     <div>
-      <h2>Date: {date.toLocaleDateString()}</h2>
-      <h2>Time: {date.toLocaleTimeString()}</h2>
+      <h2>{date.toLocaleDateString()} - {date.toLocaleTimeString()}</h2>
     </div>
   );
 }

@@ -20,10 +20,12 @@ function CashierView() {
     return (
         <div className="cashierContainer">
             <div className="cashiew-view-info">
-            <h1>SUBMIT CUSTOMER'S ORDER</h1>
-            <TimeDisplay />
-            <h2>Card: </h2>
-            <h2>Student: </h2>
+                <div className='public-view-title-2'> 
+                    <h2 id="cv-title">SUBMIT CUSTOMER'S ORDER</h2>
+                    <p id="cv-timedisp"> <TimeDisplay /></p>
+                </div>
+            <h2 id="cv-info">Card: </h2>
+            <h2 id="cv-info">Student: </h2>
             </div>
             <div className="mealButtonsContainer">
             {['Meal1', 'Meal2', 'Meal3'].map((meal, index) => (

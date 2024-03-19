@@ -14,7 +14,7 @@ const softSPI = new SoftSPI({
                     // 3.3V: 1
 });
 
-// Setting reset pin and buzzer pin (for adding signal in the future)
+// Setting reset pin and buzzer pin (for adding audio signal in the future)
 const mfrc522 = new Mfrc522(softSPI).setResetPin(22).setBuzzerPin(18);
 
 // Variable to hold last read data

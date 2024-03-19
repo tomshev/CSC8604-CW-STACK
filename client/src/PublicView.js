@@ -19,6 +19,7 @@ const PublicView = () => {
                     interval={5000}
                     transitionTime={500}
                     showArrows={true}
+                    showIndicators={false}
                 >
                     <div>
                         <img src="MealVar_1.jpg" alt="Image 1"/>
@@ -33,7 +34,7 @@ const PublicView = () => {
             </div>
             <div style={{flex: 1}}>
                 {/* Placeholder for diagram */}
-                Diagram will go here
+                NO DATA
             </div>
         </div>
     );
