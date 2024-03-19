@@ -3,12 +3,14 @@ import { Carousel } from 'react-responsive-carousel';
 import { Pie } from 'react-chartjs-2';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Chart, ArcElement} from 'chart.js';
+// import ChartDataLabels from
 
 
 import './PublicView.css';
 
 
 Chart.register(ArcElement);
+// Chart.register(ChartDataLabels);
 
 const PublicView = () => {
     const [backendData, setBackendData] = useState(null);
@@ -46,7 +48,7 @@ const PublicView = () => {
             tooltip: {
                 enabled: true, 
             },
-            labels: {
+            datalabels: {
                 enabled: true,
             }
         }
