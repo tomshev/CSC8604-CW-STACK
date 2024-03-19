@@ -24,7 +24,7 @@ function CashierView() {
             {['Meal1', 'Meal2', 'Meal3'].map((meal, index) => (
                     <button
                         key={index}
-                        className={`mealButton ${selectedMeal === meal ? 'selected' : ''} ${meal}`}
+                        className={`mealButton ${selectedMeal === meal ? 'selected2' : ''} ${meal}`}
                         onClick={() => handleMealSelect(meal)}
                     >
                         {meal}
