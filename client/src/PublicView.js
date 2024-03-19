@@ -37,6 +37,21 @@ const PublicView = () => {
         }]
     });
 
+    const chartOptions = {
+        plugins: {
+            legend: {
+                display: true,
+                position: 'bottom', 
+            },
+            tooltip: {
+                enabled: true, 
+            },
+            labels: {
+                enabled: true,
+            }
+        }
+    }
+
     const fetchData = () => {
         fetch("/mealData")
         .then(response => response.json())
@@ -110,11 +125,11 @@ const PublicView = () => {
                 <>
                     <div>
                         <h3>Class 201</h3>
-                        <Pie data={pieData201} />
+                        <Pie data={pieData201} options={chartOptions}/>
                     </div>
                     <div>
                         <h3>Class 203</h3>
-                        <Pie data={pieData203} />
+                        <Pie data={pieData203} options={chartOptions}/>
                     </div>
                 </>
                 )}
