@@ -27,6 +27,7 @@ function CashierView() {
 
     const handleSubmit = () => {
 
+        console.log(selectedMeal);
         if (!selectedMeal) {
             console.log("No meal selected");
             return;

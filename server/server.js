@@ -4,15 +4,17 @@ const { startReadingCard, getLastReadData } = require('./RaspberryPI_Card_For_Se
 
 const app = express()
 
+app.use(express.json());
+
 startReadingCard();
 
 // app.use(express.static("content"));
 
 app.post("/submitMeal", (req, res) => {
     const meal = req.body;
-    console.log(JSON.stringify(meal));
+    console.log(meal);
     const sClass = getLastReadData();
-    console.log(`Meal selected: ${meal}, Card: ${sClass}`);
+    console.log(`Meal selected: ${JSON.stringify(meal)}, Card: ${sClass}`);
 
     // LOGIC FOR PROCESSING
     res.status(200).json({message: "Meal received"});
