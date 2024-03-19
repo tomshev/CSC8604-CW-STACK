@@ -43,6 +43,15 @@ app.get("/api", (req,res) => {
     }
 })
 
+app.get("/mealData", (req,res) => {
+    
+    if (mealCounts !== null) {
+        res.json({ mealData: mealCounts });
+    } else {
+        res.json({ error: "NO MEAL DATA"});
+    }
+})
+
 
 
 app.listen(5000, () => {console.log("Server started on port 5000")})
