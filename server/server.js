@@ -8,6 +8,16 @@ startReadingCard();
 
 // app.use(express.static("content"));
 
+app.post("/submitMeal", (req, res) => {
+    const meal = req.body;
+    console.log(JSON.stringify(meal));
+    const sClass = getLastReadData();
+    console.log(`Meal selected: ${meal}, Card: ${sClass}`);
+
+    // LOGIC FOR PROCESSING
+    res.status(200).json({message: "Meal received"});
+})
+
 app.get("/api", (req,res) => {
     // res.json({"users": ["userOne", "userTwo", "userThree", "userFour"] })
     const lastReadData = getLastReadData();
@@ -15,7 +25,7 @@ app.get("/api", (req,res) => {
     if (lastReadData !== null) {
         res.json({ cardData: lastReadData });
     } else {
-        res.status(400).json({ error: "HOLD CARD NEAR THE SCANNER"});
+        res.json({ error: "HOLD CARD NEAR THE SCANNER"});
     }
 })
 

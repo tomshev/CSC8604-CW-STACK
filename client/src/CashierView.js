@@ -10,9 +10,7 @@ function CashierView() {
     const fetchData = () => {
         fetch("/api")
         .then(response => response.json())
-        .then(data => {
-            setBackendData(data);
-        })
+        .then(data => { setBackendData(data); })
         .catch(error => console.error("ERROR FETCHING DATA: ", error));
     }
 
@@ -29,6 +27,31 @@ function CashierView() {
 
     const handleSubmit = () => {
 
+        if (!selectedMeal) {
+            console.log("No meal selected");
+            return;
+        }
+
+        const postData = {
+            meal: selectedMeal,
+        };
+
+        fetch("/submitMeal", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(postData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Server response:", data.message);
+
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
         // LOGIC FOR SENDING ORDER TO SERVER HERE
         console.log("Order submitted!");
       };
@@ -40,17 +63,16 @@ function CashierView() {
                     <h2 id="cv-title">SUBMIT CUSTOMER'S ORDER</h2>
                     <p id="cv-timedisp"> <TimeDisplay /></p>
                 </div>
-                <h2 id="cv-info">Card: {backendData === null ? (<p>Loading...</p>) : backendData.error ? (
+                <h2 id="cv-info">{backendData === null ? (<p>Loading...</p>) : backendData.error ? (
                     // Checks if th backendData object contains an error property
-                    <p>{backendData.error} </p> ) : (
+                    <p>Card: {backendData.error} </p> ) : (
                     // Display the card data if available
-                    <p>{backendData.cardData}</p> )} 
+                    <p>Card: {backendData.cardData}</p> )} 
                 </h2>
-                <h2 id="cv-info">Student: {backendData === null ? (<p>Loading...</p>) : backendData.error ? (
-                    // Checks if th backendData object contains an error property
-                    <p></p> ) : backendData.cardData === 201 ? (
-                    <p>Dan</p>) : backendData.cardData === 203 ? (
-                    <p>Nick</p> ) : (
+                <h2 id="cv-info">{backendData === null ? (<p>Loading...</p>) : backendData.error ? (
+                    <p>Student: </p> ) : backendData.cardData === 201 ? (
+                    <p>Student: Dan</p>) : backendData.cardData === 203 ? (
+                    <p>Student: Nick</p> ) : (
                     <p>{backendData.cardData}</p> )} 
                 </h2>
             </div>
