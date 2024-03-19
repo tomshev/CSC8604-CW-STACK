@@ -91,7 +91,7 @@
     font-family: Helvetica;
     font-weight: bold;
     /* background: linear-gradient(to right, green, lightgreen); */
-    background: linear-gradient(to right, rgb(0, 122, 47), #f0f0f0);
+    background: linear-gradient(to right, rgb(0, 122, 47), #ffffff);
     height: 7vh;
 }
 

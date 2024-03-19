@@ -16,7 +16,7 @@ const PublicView = () => {
                     infiniteLoop
                     showThumbs={false}
                     showStatus={false}
-                    interval={5000}
+                    interval={4000}
                     transitionTime={500}
                     showArrows={true}
                     showIndicators={false}
