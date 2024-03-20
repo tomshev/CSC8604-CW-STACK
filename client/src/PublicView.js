@@ -105,7 +105,7 @@ const PublicView = () => {
                     showIndicators={false}
                 >
                     <div>
-                        <img src="MealVar_1_FF.jpg" alt="Meal Options, Variant 1, Simple"/>
+                        <img src="MealVar1_FF.jpg" alt="Meal Options, Variant 1, Simple"/>
                     </div>
                     <div>
                         <img src="MealVar_2_F.jpg" alt="Meal Options, Variant 2, Informative"/>
@@ -131,14 +131,27 @@ const PublicView = () => {
                 ) : backendData.error ? (
                 <p>{backendData.error}</p>
                 ) : (
-                <>
+                <>  <div className='graphWrap'>
                     <div>
-                        <h3>Class 201</h3>
+                        <h2> Grade 2A | ID-201</h2>
                         <Pie data={pieData201} options={chartOptions}/>
                     </div>
+                    <div className='graphLegend'>
+                        <h2><span style={{color: 'red'}}>PIZZA</span></h2>
+                        <h2><span style={{color: 'orange'}}>CHICKEN</span></h2>
+                        <h2><span style={{color: 'green'}}>PASTA</span></h2>
+                    </div>
+                    </div>
+                    <div className='graphWrap'>
                     <div>
-                        <h3>Class 203</h3>
+                        <h2> Grade 2C | ID-203</h2>
                         <Pie data={pieData203} options={chartOptions}/>
+                    </div>
+                    <div className='graphLegend'>
+                        <h2><span style={{color: 'red'}}>PIZZA</span></h2>
+                        <h2><span style={{color: 'orange'}}>CHICKEN</span></h2>
+                        <h2><span style={{color: 'green'}}>PASTA</span></h2>
+                    </div>
                     </div>
                 </>
                 )}

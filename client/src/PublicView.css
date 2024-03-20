@@ -13,3 +13,10 @@
     margin-left: 20px;
     color: white;
 }
+
+.graphWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
