@@ -42,6 +42,7 @@ const PublicView = () => {
     const chartOptions = {
         plugins: {
             legend: {
+                enabled: true, 
                 display: true,
                 position: 'bottom', 
             },
@@ -50,7 +51,12 @@ const PublicView = () => {
             },
             datalabels: {
                 enabled: true,
+            },
+            title: {
+                display: true,
+                text: 'Hi'
             }
+
         }
     }
 
