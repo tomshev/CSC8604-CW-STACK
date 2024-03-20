@@ -105,7 +105,7 @@ const PublicView = () => {
                     showIndicators={false}
                 >
                     <div>
-                        <img src="MealVar_1_F.jpg" alt="Meal Options, Variant 1, Simple"/>
+                        <img src="MealVar_1_FF.jpg" alt="Meal Options, Variant 1, Simple"/>
                     </div>
                     <div>
                         <img src="MealVar_2_F.jpg" alt="Meal Options, Variant 2, Informative"/>
