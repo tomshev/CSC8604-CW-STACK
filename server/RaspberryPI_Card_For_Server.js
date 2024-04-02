@@ -1,8 +1,16 @@
 
 /*
 
-    FILE: 
-    DESCRIPTION:
+    FILE: RaspberryPI_Card_For_Server.js
+
+    CREATED BY: TOM SEVCOV (190379894)
+
+    DESCRIPTION: The code in this file is a JavaScript program that interacts with an RFID card reader
+    connected to a Raspberry Pi. It uses the mfrc522-rpi and rpi-softspi libraries to communicate with
+    the card reader via a software SPI interface.
+
+    This file is called on the server side and is used to read data from RFID card and
+    return the 'lastReadData' variable. The script is run in a loop, every 5 seconds.
 
 */
 
@@ -10,7 +18,7 @@
 const Mfrc522 = require("mfrc522-rpi");
 const SoftSPI = require("rpi-softspi");
 
-console.log("Initialising card scanner...");
+console.log("INITIALISING CARD SCANNER...");
 
 const softSPI = new SoftSPI({
     clock: 23,      // SCK
@@ -72,19 +80,20 @@ function startReadingCard() {
         // Authenticate on Block 8 with key and uid
         // Output message if there is an error
         if (!mfrc522.authenticate(8, key, uid)) {
-            console.log("Authentication Error");
+            console.log("AUTHENTICATION ERROR");
             return;
         }
     
         // Retrieve data on Block 8 and output it
-        console.log("Block: 8 Data: " + mfrc522.getDataForBlock(8));
+        console.log("BLOCK: 8 DATA: " + mfrc522.getDataForBlock(8));
     
-        // Outputting the first byte (number) only
-        // This is for testing and future purposes
+        // Getting the first byte (number) only
         let blockdata = mfrc522.getDataForBlock(8);
-        let firstbyte = blockdata[0];
+
         lastReadData = blockdata[0];
-        console.log(firstbyte);
+
+        // Output the first byte (blockdata[0]) for testing
+        console.log(lastReadData);
     
         // Finish the process
         mfrc522.stopCrypto();

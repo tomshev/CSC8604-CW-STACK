@@ -1,8 +1,16 @@
 
 /*
 
-    FILE: 
-    DESCRIPTION:
+    FILE: RaspberryPI_Card_Write.js
+
+    CREATED BY: TOM SEVCOV (190379894)
+    
+    DESCRIPTION: The code in this file is a JavaScript program that interacts with an RFID card reader
+    connected to a Raspberry Pi. It uses the mfrc522-rpi and rpi-softspi libraries to communicate with
+    the card reader via a software SPI interface.
+
+    This file can be used for writing data to an RFID card. It is not being called anywhere, but can
+    be triggered manually.
 
 */
 
@@ -10,7 +18,7 @@
 const Mfrc522 = require("mfrc522-rpi");
 const SoftSPI = require("rpi-softspi");
 
-console.log("Initialising card scanner...");
+console.log("INITIALISING CARD SCANNER...");
 
 const softSPI = new SoftSPI({
     clock: 23,      // SCK
