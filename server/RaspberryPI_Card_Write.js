@@ -1,3 +1,11 @@
+
+/*
+
+    FILE: 
+    DESCRIPTION:
+
+*/
+
 "use strict";
 const Mfrc522 = require("mfrc522-rpi");
 const SoftSPI = require("rpi-softspi");
