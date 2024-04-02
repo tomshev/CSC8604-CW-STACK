@@ -2,7 +2,7 @@
 Team project for CSC8604 module coursework, created by Tom Sevcov, Annie Lambert, Eshaan Abhyankar and Archita Pathak.
 
 
-## TECHNOLOGY
+## PROJECT
 This repository is a food preferance analysing system for schools, which can be used in dining
 areas. This system can be expanded and upgraded for future possibilities, but for now its main
 functionality is:
