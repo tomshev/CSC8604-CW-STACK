@@ -1,3 +1,14 @@
+
+/*
+
+  FILE: Home.js
+
+  CREATED BY: TOM SEVCOV (190379894)
+    
+  DESCRIPTION: This is a homepage acting as a router when the user first accesses the website.
+
+*/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';

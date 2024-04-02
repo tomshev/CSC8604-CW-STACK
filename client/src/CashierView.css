@@ -1,8 +1,4 @@
 .cashierContainer {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
     height: 100vh;
 }
 
@@ -14,7 +10,6 @@
 #cv-title {
     color: white;
     margin-left: 20px;
-    /* text-align: left; */
 }
 
 #cv-info {
@@ -66,14 +61,14 @@
 
 .submitButton {
 
-    width: 200px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: 200px; 
+    height: 50px; 
     margin: 0px;
     border-radius: 10px; 
     cursor: pointer;
     outline: none;
     border: none;
-    background-color: #28a745; /* Example background color */
+    background-color: #28a745; 
     color: white;
     font-size: 16px;
 }
@@ -90,12 +85,11 @@
     justify-content: space-between;
     font-family: Helvetica;
     font-weight: bold;
-    /* background: linear-gradient(to right, green, lightgreen); */
     background: linear-gradient(to right, rgb(0, 122, 47), #ffffff);
     height: 7vh;
 }
 
 .selected2 {
     border: 10px solid #ff0000;
-    border-color: #ff0000; /* Optionally, make the border darker as well */
+    border-color: #ff0000;
 }

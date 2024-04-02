@@ -1,3 +1,17 @@
+
+/*
+
+  FILE: CashierView.js
+
+  CREATED BY: TOM SEVCOV (190379894)
+    
+  DESCRIPTION: This is a page to be displayed on the cashier's screen, containing current date,
+  RFID/NFC card status (student data shown when card is near the reader) and buttons with meals.
+  Cashier can select a meal and submit the order to the server. The meal is attached to a student 
+  grade ID and processed on the server, later to be shown on the public screen. 
+
+*/
+
 import React, { useEffect, useState } from 'react' 
 import './CashierView.css';
 import TimeDisplay from './TimeDisplay';
@@ -7,6 +21,7 @@ function CashierView() {
     const [backendData, setBackendData] = useState(null);
     const [selectedMeal, setSelectedMeal] = useState(null);
 
+    // Fetching data from the server (card data)
     const fetchData = () => {
         fetch("/api")
         .then(response => response.json())
@@ -14,17 +29,21 @@ function CashierView() {
         .catch(error => console.error("ERROR FETCHING DATA: ", error));
     }
 
+    // Fetching data from the server every 5 seconds
+    // automatically, without refreshing the page
     useEffect(() => {
         fetchData();
         const interval = setInterval(fetchData, 5000);
         return () => clearInterval(interval);
     }, [])
 
+    // Meal selection logic
     const handleMealSelect = (meal) => {
 
         setSelectedMeal(meal);
     };
 
+    // Meal submission to the server
     const handleSubmit = () => {
 
         console.log(selectedMeal);
@@ -53,7 +72,6 @@ function CashierView() {
             console.error('Error:', error);
         });
 
-        // LOGIC FOR SENDING ORDER TO SERVER HERE
         console.log("Order submitted!");
       };
 
@@ -70,6 +88,7 @@ function CashierView() {
                     // Display the card data if available
                     <p>Card: {backendData.cardData}</p> )} 
                 </h2>
+                {/* Showing student names as an example depending on the grade */}
                 <h2 id="cv-info">{backendData === null ? (<p>Loading...</p>) : backendData.error ? (
                     <p>Student: </p> ) : backendData.cardData === 201 ? (
                     <p>Student: Dan</p>) : backendData.cardData === 203 ? (
@@ -92,7 +111,8 @@ function CashierView() {
                 <button
                     className="submitButton"
                     onClick={handleSubmit}
-                    disabled={!selectedMeal} // Disable if no meal is selected
+                    // Disabling the button if no meal is selected
+                    disabled={!selectedMeal}
                 >
                     SUBMIT
                 </button>

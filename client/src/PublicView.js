@@ -1,20 +1,33 @@
+
+/*
+
+  FILE: PublicView.js
+
+  CREATED BY: TOM SEVCOV (190379894)
+    
+  DESCRIPTION: This is a page to be displayed on the public screen, containing today's meals
+  and live statistics. Screen is split into two horizontal sections, with a carousel of images
+  at the top, and live pie charts below. Data is fetched from the server every 5 seconds.
+
+*/
+
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Pie } from 'react-chartjs-2';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Chart, ArcElement} from 'chart.js';
-// import ChartDataLabels from
-
 
 import './PublicView.css';
 
-
+// Registering the ArcElement for the Pie chart
+// to have necessary funtionality to draw arcs when rendering the chart
 Chart.register(ArcElement);
-// Chart.register(ChartDataLabels);
 
 const PublicView = () => {
+
     const [backendData, setBackendData] = useState(null);
 
+    // Pie chart for Grade 2A (ID-201)
     const [pieData201, setPieData201] = useState({
         labels: ['Meal1', 'Meal2', 'Meal3'],
         datasets: [{
@@ -28,6 +41,7 @@ const PublicView = () => {
         }]
     });
  
+    // Pie chart for Grade 2C (ID-203)
     const [pieData203, setPieData203] = useState({
         labels: ['Meal1', 'Meal2', 'Meal3'],
         datasets: [{
@@ -40,6 +54,7 @@ const PublicView = () => {
         }]
     });
 
+    // Chart options for the Pie chart
     const chartOptions = {
         plugins: {
             legend: {
@@ -57,10 +72,11 @@ const PublicView = () => {
                 display: true,
                 text: 'Hi'
             }
-
         }
     }
 
+    // Fetching data from the server, submitted from CashierView.js
+    // and updating the Pie charts with the data
     const fetchData = () => {
         fetch("/mealData")
         .then(response => response.json())
@@ -82,12 +98,15 @@ const PublicView = () => {
         .catch(error => console.error("Error fetching data: ", error));
     }   
 
+    // Fetching data from the server every 5 seconds
+    // automatically, without refreshing the page
     useEffect(() => {
     fetchData(); 
     const interval = setInterval(fetchData, 5000);
     return () => clearInterval(interval);
     }, [])
 
+    // Rendering the page with the Carousel and Pie charts
     return (
         <div style={{height: '100vh', display: 'flex', flexDirection: 'column'}}>
             <div className='public-view-title'>
@@ -116,15 +135,6 @@ const PublicView = () => {
                 <h2 id="pv-title">LIVE FEED</h2>
             </div>
             <div style={{flex: 1, height: '50vh'}}>
-                {/* Check if backend data is null to determine if loading message should be displayed
-                {backendData === null ? (
-                <p>Loading...</p>
-                ) : backendData.error ? ( // Checks if th backendData object contains an error property
-                <p> {backendData.error} </p> // Display error message
-                ) : (
-                  // Display the card data if available
-                <p>Card data: {JSON.stringify(backendData.mealData)}</p>
-                )} */}
                 <div className="pieChartsContainer" style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
                 {backendData === null ? (
                 <p>Loading...</p>

@@ -1,3 +1,15 @@
+
+/*
+
+  FILE: App.js
+
+  CREATED BY: TOM SEVCOV (190379894)
+    
+  DESCRIPTION: This acts as a main component of this React app. It renders a page as well and can be used
+  to test data fetching from the server. It handles routing of the pages too. 
+
+*/
+
 import React, { useEffect, useState } from 'react' 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
@@ -18,32 +30,6 @@ function App() {
 }
 
 function AppTEST() {
-
-  // const [backendData, setBackendData] = useState([{}])
-
-  // useEffect(() => {
-  //   fetch("/api").then(
-  //     response => response.json()
-  //   ).then(
-  //     data => {
-  //       setBackendData(data)
-  //     }
-  //   )
-  // })
-
-  // return (
-  //   <div>
-
-  //     {(typeof backendData.users === 'undefined') ? (
-  //       <p>Loading...</p>        
-  //     ): (
-  //       backendData.users.map((user, i) => (
-  //         <p key={i}>{user}</p>
-  //       ))
-  //     )}
-
-  //   </div>
-  // )
 
   const [backendData, setBackendData] = useState(null);
 
