@@ -18,6 +18,7 @@ TO IMPLEMENT:
 
 * Clone the CSC8604-CW-STACK repository to the Raspberry Pi
 * Connect RFID-RC522 RFID/NFC reader to the Raspberry Pi
+    ```
     3.3V to PIN 1
     RST to PIN 22
     GND to PIN 6
@@ -25,7 +26,8 @@ TO IMPLEMENT:
     MOSI to PIN 19
     SCK to PIN 23
     SDA to PIN 24
-
+    ```
+    
 * In the main directory, CSC8604-CW-STACK, open two terminal windows
     In the 1st window:
     ```
