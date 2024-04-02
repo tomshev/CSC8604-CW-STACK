@@ -21,17 +21,13 @@ Hardware:
 * Computer monitor
 * Physical small scale representation of a canteen
 
-Software and libraries:
+Software:
 * Node.js
 * Express
 * React
 * Git
 * VS Code
 * npm
-* 'mfrc522-rpi'
-* 'rpi-softspi'
-* 'react-responsive-carousel'
-* 'react-chartjs-2'
 
 
 ## RUNNING AND USING THE SERVICE
