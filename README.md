@@ -1,21 +1,40 @@
 # CSC8604-CW-STACK
-Team project for CSC8604 module coursework, using Express and React
-
-TO IMPLEMENT:
-
-- NFC/RFID writing and retrieving ID from card
-- Retrieve ClassID from ID entry in database
-- cashierView selection available when NFC/RFID card is scanned and ID is retrieved
-- cashierView 'CONFIRM' only if (selectedMeal), otherwise alert('NO SELECTION IS MADE')
-- cashierView resets when 'CONFIRM' is pressed
-- Pairing confirmed selectedMeal to just scanned ID and ClassID
-- Updating the statistics
+Team project for CSC8604 module coursework
 
 
+## TECHNOLOGY
+This repository is a food preferance analysing system for schools, which can be used in dining
+areas. This system can be expanded and upgraded for future possibilities, but for now its main
+functionality is:
+* Collecting the data about what food each school grade prefers to buy in canteen
+* Processing the data on the server
+* Representing data in a form of a pie chart
+* System works will additional hardware (RFID/NFC scanner)
+
+
+## TECHNOLOGY
+Hardware:
+* Raspberry Pi 4 MODEL B
+* RFID-RC522 RFID/NFC reader/writer
+* NFC card and key
+* 10" touchscreen
+* Computer monitor
+* Physical small scale representation of a canteen
+
+Software and libraries:
+* Node.js
+* Express
+* React
+* Git
+* VS Code
+* npm
+* 'mfrc522-rpi'
+* 'rpi-softspi'
+* 'react-responsive-carousel'
+* 'react-chartjs-2'
 
 
 ## RUNNING AND USING THE SERVICE
-
 * Clone the CSC8604-CW-STACK repository to the Raspberry Pi
 * Connect RFID-RC522 RFID/NFC reader to the Raspberry Pi
     ```
