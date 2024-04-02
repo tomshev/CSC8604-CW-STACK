@@ -27,9 +27,8 @@ TO IMPLEMENT:
     SCK to PIN 23
     SDA to PIN 24
     ```
-    
-* In the main directory, CSC8604-CW-STACK, open two terminal windows
-    In the 1st window:
+
+* In the main directory, CSC8604-CW-STACK, open two terminal windows. In the 1st window:
     ```
     cd server
     npm install
@@ -41,12 +40,12 @@ TO IMPLEMENT:
     npm install
     ```
 
-    In the 1st window:
+    In the 1st window (server):
     ```
     npm run dev
     ```
 
-    In the 2nd window:
+    In the 2nd window (client):
     ```
     npm start
     ```
