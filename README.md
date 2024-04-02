@@ -1,5 +1,5 @@
 # CSC8604-CW-STACK
-Team project for CSC8604 module coursework
+Team project for CSC8604 module coursework, created by Tom Sevcov, Annie Lambert, Eshaan Abhyankar and Archita Pathak.
 
 
 ## TECHNOLOGY
